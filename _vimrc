@@ -33,6 +33,9 @@ autocmd FileType haskell iab ## ------------------------------------------------
 
 "set g:haddock_docdir C:\ghc\ghc-7.0.1\doc
 
+"Wean myself off of using the escape key
+imap <Esc> <<<<<<<<<<<<<<< PLEASE STOP USING THE ESCAPE KEY >>>>>>>>>>>>>>>>>>>> <cr><cr>
+
 "Python stuff
 autocmd FileType python nnoremap \re :!pypy %<cr>
 autocmd FileType python nnoremap \rr :!python %<cr>
@@ -79,7 +82,6 @@ function MyDiff()
   endif
   silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunction
-
 
 
 "C type languages

@@ -276,6 +276,7 @@ import traceback
 
 # update the sys path to include the jedi_vim script
 sys.path.insert(1, vim.eval('expand("<sfile>:p:h:h")'))
+import jedi_vim
 try:
     import jedi_vim
 except ImportError:

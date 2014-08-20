@@ -1,4 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='c:/addons/fbremover/addon-sdk-1.16/facebookremover/data'
-let g:netrw_dirhist_2='C:\addons\fbremover\addon-sdk-1.16\facebookremover\data'
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='C:/Users/Anthony/vimfiles/bundle'
+let g:netrw_dirhist_2='C:/Users/Anthony/vimfiles/bundle/jedi-vim-master'
+let g:netrw_dirhist_3='C:/Users/Anthony/vimfiles/bundle/jedi-vim-master/autoload'
+let g:netrw_dirhist_4='C:/Users/Anthony/vimfiles/bundle/jedi-vim-master'
+let g:netrw_dirhist_5='C:/projects'
+let g:netrw_dirhist_6='C:'
+let g:netrw_dirhist_7='C:/projects'
+let g:netrw_dirhist_8='C:/projects/Solitaire'
+let g:netrw_dirhist_9='C:/projects/Solitaire/webapp'
