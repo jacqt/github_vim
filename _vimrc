@@ -1,7 +1,7 @@
 "Command for converting dos to unix for every file in a directory:
 ""find . -type f -exec dos2unix {} {} \;
 set nocompatible
-source $VIMRUNTIME/vimrc_example.vim
+source $VIMRUNTIME/vimrc_example.vim "???
 source $VIMRUNTIME/mswin.vim
 behave mswin
 
@@ -20,7 +20,8 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set expandtab
-set diffexpr=MyDiff()
+"set diffexpr=MyDiff()
+"
 filetype plugin on
 
 "set omnifunc=syntaxcomplete#Complete
@@ -39,7 +40,7 @@ imap <Esc> <<<<<<<<<<<<<<< PLEASE STOP USING THE ESCAPE KEY >>>>>>>>>>>>>>>>>>>>
 "Python stuff
 autocmd FileType python nnoremap \re :!pypy %<cr>
 autocmd FileType python nnoremap \rr :!python %<cr>
-autocmd FileType python let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+"autocmd FileType python let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 autocmd FileType python iab ## #############################################################
 autocmd FileType python set foldmethod=indent
 autocmd FileType python nnoremap <space> za
@@ -85,12 +86,13 @@ endfunction
 
 
 "C type languages
-autocmd FileType c let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-autocmd FileType cpp let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-autocmd FileType h let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+"autocmd FileType c let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+"autocmd FileType cpp let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+"autocmd FileType h let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 autocmd FileType cpp iab ## //////////////////////////////////////////////////////////
 " --- OmniCppComplete ---
 " -- required --
+"
 set nocp " non vi compatible mode
 filetype plugin on " enable plugins
 " -- optional --
@@ -98,16 +100,17 @@ filetype plugin on " enable plugins
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 set completeopt=menu,menuone
 " -- configs --
-let OmniCpp_MayCompleteDot = 1 " autocomplete with .
-let OmniCpp_MayCompleteArrow = 1 " autocomplete with ->
-let OmniCpp_MayCompleteScope = 1 " autocomplete with ::
-let OmniCpp_SelectFirstItem = 2 " select first item (but don't insert)
-let OmniCpp_NamespaceSearch = 2 " search namespaces in this and included files
-let OmniCpp_ShowPrototypeInAbbr = 1 " show function prototype (i.e. parameters) in popup window
+"let OmniCpp_MayCompleteDot = 1 " autocomplete with .
+"let OmniCpp_MayCompleteArrow = 1 " autocomplete with ->
+"let OmniCpp_MayCompleteScope = 1 " autocomplete with ::
+"let OmniCpp_SelectFirstItem = 2 " select first item (but don't insert)
+"let OmniCpp_NamespaceSearch = 2 " search namespaces in this and included files
+"let OmniCpp_ShowPrototypeInAbbr = 1 " show function prototype (i.e. parameters) in popup window
 " -- ctags --
 " map <ctrl>+F12 to generate ctags for current folder:
 set autochdir
 map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
+
 " add current directory's generated tags file to available tags
 set tags+=./tags
 "set tags+=C:/cpp/stlctags/tags
