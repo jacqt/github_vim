@@ -35,11 +35,11 @@ autocmd FileType haskell iab ## ------------------------------------------------
 "set g:haddock_docdir C:\ghc\ghc-7.0.1\doc
 
 "Wean myself off of using the escape key
-imap <Esc> <<<<<<<<<<<<<<< PLEASE STOP USING THE ESCAPE KEY >>>>>>>>>>>>>>>>>>>> <cr><cr>
+"imap <Esc> <<<<<<<<<<<<<<< PLEASE STOP USING THE ESCAPE KEY >>>>>>>>>>>>>>>>>>>> <cr><cr>
 
 "Python stuff
 autocmd FileType python nnoremap \re :!pypy %<cr>
-autocmd FileType python nnoremap \rr :!python %<cr>
+autocmd FileType python nnoremap \rr :pyf %<cr>
 "autocmd FileType python let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 autocmd FileType python iab ## #############################################################
 autocmd FileType python set foldmethod=indent
@@ -95,10 +95,13 @@ autocmd FileType cpp iab ## ////////////////////////////////////////////////////
 "
 set nocp " non vi compatible mode
 filetype plugin on " enable plugins
+
+let g:ycm_min_num_of_chars_for_completion = 1
 " -- optional --
 " auto close options when exiting insert mode
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-set completeopt=menu,menuone
+"set completeopt=menu,menuone
+"
 " -- configs --
 "let OmniCpp_MayCompleteDot = 1 " autocomplete with .
 "let OmniCpp_MayCompleteArrow = 1 " autocomplete with ->
