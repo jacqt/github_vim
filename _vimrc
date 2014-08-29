@@ -1,3 +1,6 @@
+set shell=cmd
+set shellcmdflag=/c
+
 "Command for converting dos to unix for every file in a directory:
 ""find . -type f -exec dos2unix {} {} \;
 set nocompatible
@@ -38,14 +41,19 @@ autocmd FileType haskell iab ## ------------------------------------------------
 "imap <Esc> <<<<<<<<<<<<<<< PLEASE STOP USING THE ESCAPE KEY >>>>>>>>>>>>>>>>>>>> <cr><cr>
 
 "Python stuff
-autocmd FileType python nnoremap \re :!pypy %<cr>
-autocmd FileType python nnoremap \rr :pyf %<cr>
 "autocmd FileType python let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+"autocmd FileType python nnoremap \re :!pypy %<cr>
+autocmd FileType python nnoremap \re : call RunPython()<cr>
 autocmd FileType python iab ## #############################################################
 autocmd FileType python set foldmethod=indent
 autocmd FileType python nnoremap <space> za
 autocmd FileType python vnoremap <space> zf
+inoremap <C-c> <Esc><Esc>
 
+nnoremap <C-c> <<<<<<< PLEASE DONT USE CONTROL C >>>>>>>>
+vnoremap <C-c> <<<<<<< PLEASE DONT USE CONTROL C >>>>>>>>
+onoremap <C-c> <<<<<<< PLEASE DONT USE CONTROL C >>>>>>>>
+inoremap <C-c> <<<<<<< PLEASE DONT USE CONTROL C >>>>>>>>
 "vim2hs unicode support
 "set digraph
 "set encoding=utf-8
@@ -119,6 +127,13 @@ set tags+=./tags
 "set tags+=C:/cpp/stlctags/tags
 set tags+=~/.vim/ctags/stl
 set tags+=$HOME/vimfiles/ctags/stl
+
+function RunPython()
+    rightbelow 8 new | r!python # 
+    setlocal buftype=nofile
+    setlocal bufhidden=hide
+    setlocal noswapfile 
+endfunction
 
 " Redirect output to new tab
 function! TM(cmd)
